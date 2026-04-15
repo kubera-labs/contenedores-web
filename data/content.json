@@ -1,0 +1,101 @@
+{
+  "hero": {
+    "title": "Contenedores de alta calidad para tu negocio",
+    "subtitle": "Soluciones modulares, seguras y personalizables",
+    "cta": "Solicitar cotización",
+    "image": "/images/hero.webp"
+  },
+  "features": [
+    {
+      "id": "feat-1",
+      "title": "Resistencia industrial",
+      "description": "Fabricados con acero de alta resistencia para soportar cualquier condición.",
+      "icon": "/images/features/resistencia.webp"
+    },
+    {
+      "id": "feat-2",
+      "title": "100% personalizables",
+      "description": "Adapta dimensiones, acabados y distribución a tus necesidades.",
+      "icon": "/images/features/personalizable.webp"
+    },
+    {
+      "id": "feat-3",
+      "title": "Entrega rápida",
+      "description": "Logística optimizada para entregar en tiempo récord.",
+      "icon": "/images/features/entrega.webp"
+    }
+  ],
+  "about": {
+    "title": "Sobre nosotros",
+    "description": "Somos referentes en la fabricación y distribución de contenedores modulares para industria, comercio y vivienda.",
+    "image": "/images/about.webp"
+  },
+  "services": [
+    {
+      "id": "srv-1",
+      "title": "Venta de contenedores",
+      "description": "Contenedores nuevos y usados en múltiples dimensiones.",
+      "image": "/images/services/venta.webp"
+    },
+    {
+      "id": "srv-2",
+      "title": "Alquiler",
+      "description": "Alquiler temporal para obras, eventos y almacenamiento.",
+      "image": "/images/services/alquiler.webp"
+    },
+    {
+      "id": "srv-3",
+      "title": "Modificaciones",
+      "description": "Transformamos contenedores en oficinas, viviendas y locales comerciales.",
+      "image": "/images/services/modificaciones.webp"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "test-1",
+      "name": "María López",
+      "role": "Gerente de Operaciones",
+      "quote": "Excelente calidad y cumplimiento en los plazos de entrega.",
+      "avatar": "/images/testimonials/maria.webp"
+    },
+    {
+      "id": "test-2",
+      "name": "Juan Rodríguez",
+      "role": "Director de Proyectos",
+      "quote": "La personalización que ofrecen no la encontramos en otro proveedor.",
+      "avatar": "/images/testimonials/juan.webp"
+    }
+  ],
+  "faq": [
+    {
+      "id": "faq-1",
+      "question": "¿Qué tamaños de contenedores manejan?",
+      "answer": "Trabajamos con contenedores de 10, 20 y 40 pies, además de medidas especiales."
+    },
+    {
+      "id": "faq-2",
+      "question": "¿Hacen envíos a todo el país?",
+      "answer": "Sí, contamos con logística nacional y acompañamiento en la entrega."
+    },
+    {
+      "id": "faq-3",
+      "question": "¿Cuánto tarda una modificación?",
+      "answer": "Dependiendo del alcance, entre 2 y 6 semanas."
+    }
+  ],
+  "contact": {
+    "title": "Contáctanos",
+    "description": "Completa el formulario y te responderemos en menos de 24 horas.",
+    "email": "info@contenedores.com",
+    "phone": "+54 11 1234-5678",
+    "address": "Av. Industrial 1234, Buenos Aires, Argentina"
+  },
+  "footer": {
+    "copyright": "© 2026 Contenedores Web. Todos los derechos reservados.",
+    "social": {
+      "instagram": "https://instagram.com/contenedoresweb",
+      "facebook": "https://facebook.com/contenedoresweb",
+      "linkedin": "https://linkedin.com/company/contenedoresweb"
+    }
+  }
+}
