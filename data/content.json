@@ -1,101 +1,467 @@
 {
   "hero": {
-    "title": "Contenedores de alta calidad para tu negocio",
-    "subtitle": "Soluciones modulares, seguras y personalizables",
-    "cta": "Solicitar cotización",
-    "image": "/images/hero.webp"
+    "eyebrow": "Casas contenedor en Uruguay · Entrega en 20 días hábiles",
+    "title": "Tu casa propia en contenedor,",
+    "titleAccent": "lista para vivir.",
+    "subtitle": "No más años pagando alquiler ni obras que no terminan. Diseñamos casas contenedor y módulos habitables listos para instalar en tu terreno —",
+    "subtitleStrong": "con garantía escrita en contrato.",
+    "ctaPrimary": "Cotizá tu casa contenedor",
+    "ctaSecondary": "Ver cómo trabajamos",
+    "microtrust": "Sin compromiso · Respondemos en menos de 24 hs · Entrega en todo Uruguay",
+    "image": "/hero/contenedores-personalizados-1.png"
   },
-  "features": [
-    {
-      "id": "feat-1",
-      "title": "Resistencia industrial",
-      "description": "Fabricados con acero de alta resistencia para soportar cualquier condición.",
-      "icon": "/images/features/resistencia.webp"
-    },
-    {
-      "id": "feat-2",
-      "title": "100% personalizables",
-      "description": "Adapta dimensiones, acabados y distribución a tus necesidades.",
-      "icon": "/images/features/personalizable.webp"
-    },
-    {
-      "id": "feat-3",
-      "title": "Entrega rápida",
-      "description": "Logística optimizada para entregar en tiempo récord.",
-      "icon": "/images/features/entrega.webp"
-    }
-  ],
   "about": {
-    "title": "Sobre nosotros",
-    "description": "Somos referentes en la fabricación y distribución de contenedores modulares para industria, comercio y vivienda.",
-    "image": "/images/about.webp"
+    "eyebrow": "Sobre Monarca Conteiners",
+    "title": "Tu casa propia,",
+    "titleAccent": "más posible de lo que creés.",
+    "subtitle": "Ayudamos a que tener tu casa propia en Uruguay se sienta más posible. Diseñamos casas contenedor y módulos habitables — viviendas modernas, funcionales y listas para instalar en tu terreno, sin obras eternas ni presupuestos que se disparan.",
+    "closing": "Porque tu terreno puede convertirse en tu hogar antes de lo que imaginás. Casas contenedor llave en mano, diseñadas para vos.",
+    "closingStrong": "tu terreno puede convertirse en tu hogar",
+    "ctaLabel": "Hablemos de tu casa contenedor",
+    "pillars": [
+      {
+        "id": "p-1",
+        "icon": "target",
+        "title": "Dejar de alquilar, empezar a construir lo tuyo",
+        "description": "Cada mes que pagás alquiler es un mes que no vuelve. Con financiación bancaria hasta 60 cuotas, podés empezar a pagar algo que es —y va a seguir siendo— tuyo."
+      },
+      {
+        "id": "p-2",
+        "icon": "zap",
+        "title": "Sin esperas eternas ni obras interminables",
+        "description": "20 días hábiles desde que decidís, hasta que tu casa contenedor está lista para vivir. Sin plazos que se estiran ni sorpresas de último momento."
+      },
+      {
+        "id": "p-3",
+        "icon": "sparkles",
+        "title": "Un lugar donde te den ganas de vivir",
+        "description": "Diseño moderno, cocina integrada, luz natural, baño completo. Una casa contenedor en Uruguay que no parece un contenedor — una vivienda linda y cómoda desde el primer día."
+      }
+    ]
   },
-  "services": [
-    {
-      "id": "srv-1",
-      "title": "Venta de contenedores",
-      "description": "Contenedores nuevos y usados en múltiples dimensiones.",
-      "image": "/images/services/venta.webp"
-    },
-    {
-      "id": "srv-2",
-      "title": "Alquiler",
-      "description": "Alquiler temporal para obras, eventos y almacenamiento.",
-      "image": "/images/services/alquiler.webp"
-    },
-    {
-      "id": "srv-3",
-      "title": "Modificaciones",
-      "description": "Transformamos contenedores en oficinas, viviendas y locales comerciales.",
-      "image": "/images/services/modificaciones.webp"
-    }
-  ],
-  "testimonials": [
-    {
-      "id": "test-1",
-      "name": "María López",
-      "role": "Gerente de Operaciones",
-      "quote": "Excelente calidad y cumplimiento en los plazos de entrega.",
-      "avatar": "/images/testimonials/maria.webp"
-    },
-    {
-      "id": "test-2",
-      "name": "Juan Rodríguez",
-      "role": "Director de Proyectos",
-      "quote": "La personalización que ofrecen no la encontramos en otro proveedor.",
-      "avatar": "/images/testimonials/juan.webp"
-    }
-  ],
-  "faq": [
-    {
-      "id": "faq-1",
-      "question": "¿Qué tamaños de contenedores manejan?",
-      "answer": "Trabajamos con contenedores de 10, 20 y 40 pies, además de medidas especiales."
-    },
-    {
-      "id": "faq-2",
-      "question": "¿Hacen envíos a todo el país?",
-      "answer": "Sí, contamos con logística nacional y acompañamiento en la entrega."
-    },
-    {
-      "id": "faq-3",
-      "question": "¿Cuánto tarda una modificación?",
-      "answer": "Dependiendo del alcance, entre 2 y 6 semanas."
-    }
-  ],
-  "contact": {
-    "title": "Contáctanos",
-    "description": "Completa el formulario y te responderemos en menos de 24 horas.",
-    "email": "info@contenedores.com",
-    "phone": "+54 11 1234-5678",
-    "address": "Av. Industrial 1234, Buenos Aires, Argentina"
+  "gallery": {
+    "eyebrow": "Nuestros proyectos en Uruguay",
+    "title": "Casas y módulos que hablan",
+    "titleAccent": "por sí solos.",
+    "subtitle": "Cada proyecto es distinto. Estas son algunas de las casas contenedor, módulos habitables y soluciones comerciales que entregamos en Uruguay.",
+    "items": [
+      {
+        "id": "gal-1",
+        "label": "Vivienda Unifamiliar · 40 pies",
+        "description": "2 ambientes completos con cocina integrada, baño y deck exterior.",
+        "tag": "Vivienda",
+        "image": "/contenedores/c1.jpeg"
+      },
+      {
+        "id": "gal-2",
+        "label": "Oficina Modular · 20 pies",
+        "description": "Espacio de trabajo climatizado con instalación eléctrica completa.",
+        "tag": "Comercial",
+        "image": "/contenedores/c2.jpeg"
+      },
+      {
+        "id": "gal-3",
+        "label": "Local Gastronómico · 2 × 20 pies",
+        "description": "Dos módulos ensamblados con frente de vidrio y exterior premium.",
+        "tag": "Gastronómico",
+        "image": "/contenedores/c3.jpeg"
+      },
+      {
+        "id": "gal-4",
+        "label": "Almacenamiento Industrial · 40 pies HC",
+        "description": "Contenedor High Cube con portón reforzado y ventilación técnica.",
+        "tag": "Industrial",
+        "image": "/contenedores/c4.jpeg"
+      },
+      {
+        "id": "gal-5",
+        "label": "Casa Container · Dúplex 3 módulos",
+        "description": "Vivienda de dos plantas con terraza, 3 dormitorios y diseño arquitectónico.",
+        "tag": "Vivienda",
+        "image": "/contenedores/c5.jpeg"
+      },
+      {
+        "id": "gal-6",
+        "label": "Stand Comercial · 10 pies",
+        "description": "Módulo compacto para eventos, ferias y puntos de venta temporarios.",
+        "tag": "Comercial",
+        "image": "/contenedores/c6.jpeg"
+      },
+      {
+        "id": "gal-7",
+        "label": "Vivienda Compacta · 20 pies",
+        "description": "Micro-hogar funcional con cocina integrada, baño completo y zona de descanso.",
+        "tag": "Vivienda",
+        "image": "/contenedores/c7.jpeg"
+      },
+      {
+        "id": "gal-8",
+        "label": "Depósito Industrial · 40 pies",
+        "description": "Almacenamiento de alto rendimiento con acceso vehicular y ventilación técnica.",
+        "tag": "Industrial",
+        "image": "/contenedores/c8.jpeg"
+      },
+      {
+        "id": "gal-9",
+        "label": "Casa Modular · 40 pies",
+        "description": "Vivienda amplia de un nivel con living, cocina abierta y dos dormitorios.",
+        "tag": "Vivienda",
+        "image": "/contenedores/c9.jpeg"
+      },
+      {
+        "id": "gal-10",
+        "label": "Kiosco Premium · 10 pies",
+        "description": "Punto de venta compacto con frente de vidrio, ventana de atención y branding personalizado.",
+        "tag": "Gastronómico",
+        "image": "/contenedores/c10.jpeg"
+      },
+      {
+        "id": "gal-11",
+        "label": "Oficina Modular · 20 pies",
+        "description": "Espacio de trabajo climatizado, con iluminación natural y división de ambientes.",
+        "tag": "Comercial",
+        "image": "/contenedores/c11.jpeg"
+      },
+      {
+        "id": "gal-12",
+        "label": "Módulo Industrial · 40 pies HC",
+        "description": "High Cube adaptado para almacenaje pesado con estructura reforzada y puertas de acero.",
+        "tag": "Industrial",
+        "image": "/contenedores/c12.jpeg"
+      },
+      {
+        "id": "gal-13",
+        "label": "Food Truck Container · 20 pies",
+        "description": "Puesto gastronómico con ventana de despacho, extractor industrial y mesada de acero.",
+        "tag": "Gastronómico",
+        "image": "/contenedores/c13.jpeg"
+      },
+      {
+        "id": "gal-14",
+        "label": "Tiny House · 20 pies",
+        "description": "Vivienda mínima inteligente con diseño nórdico, muebles empotrados y luz natural.",
+        "tag": "Vivienda",
+        "image": "/contenedores/c14.jpeg"
+      },
+      {
+        "id": "gal-15",
+        "label": "Taller Modular · 40 pies",
+        "description": "Espacio de trabajo técnico con piso epóxico, tomas trifásicas y ventilación lateral.",
+        "tag": "Industrial",
+        "image": "/contenedores/c15.jpeg"
+      },
+      {
+        "id": "gal-16",
+        "label": "Studio Loft · 20 pies",
+        "description": "Monoambiente premium con entrepiso, cocina americana y baño en suite.",
+        "tag": "Vivienda",
+        "image": "/contenedores/c16.jpeg"
+      },
+      {
+        "id": "gal-17",
+        "label": "Showroom Modular · 2 × 20 pies",
+        "description": "Dos módulos ensamblados en L para exhibición comercial con frente acristalado.",
+        "tag": "Comercial",
+        "image": "/contenedores/c17.jpeg"
+      },
+      {
+        "id": "gal-18",
+        "label": "Café Container · 20 pies",
+        "description": "Local gastronómico con barra de café integrada, fachada de madera y diseño cálido.",
+        "tag": "Gastronómico",
+        "image": "/contenedores/c18.jpeg"
+      },
+      {
+        "id": "gal-19",
+        "label": "Casa Familiar · 40 pies",
+        "description": "Tres ambientes completos: living-comedor, 2 dormitorios y baño con bañera.",
+        "tag": "Vivienda",
+        "image": "/contenedores/c19.jpeg"
+      },
+      {
+        "id": "gal-20",
+        "label": "Oficina Ejecutiva · 40 pies",
+        "description": "Despacho climatizado con sala de reuniones, baño privado y recepción integrada.",
+        "tag": "Comercial",
+        "image": "/contenedores/c20.jpeg"
+      },
+      {
+        "id": "gal-21",
+        "label": "Sala de Control · 20 pies",
+        "description": "Módulo técnico para operaciones industriales con piso elevado y cableado estructurado.",
+        "tag": "Industrial",
+        "image": "/contenedores/c21.jpeg"
+      },
+      {
+        "id": "gal-22",
+        "label": "Vivienda Prefabricada · 3 módulos",
+        "description": "Casa completa de 3 ambientes con terraza, jardín lateral y terminaciones premium.",
+        "tag": "Vivienda",
+        "image": "/contenedores/c22.jpeg"
+      },
+      {
+        "id": "gal-23",
+        "label": "Local Comercial · 40 pies",
+        "description": "Amplio local de ventas con vidrieras, sistema de iluminación LED y acceso de doble hoja.",
+        "tag": "Comercial",
+        "image": "/contenedores/c23.jpeg"
+      },
+      {
+        "id": "gal-24",
+        "label": "Proyecto Residencial Premium · 4 módulos",
+        "description": "Casa de dos plantas con deck, cochera modular y diseño arquitectónico a medida.",
+        "tag": "Vivienda",
+        "image": "/contenedores/c24.jpeg"
+      }
+    ]
   },
-  "footer": {
-    "copyright": "© 2026 Contenedores Web. Todos los derechos reservados.",
-    "social": {
-      "instagram": "https://instagram.com/contenedoresweb",
-      "facebook": "https://facebook.com/contenedoresweb",
-      "linkedin": "https://linkedin.com/company/contenedoresweb"
-    }
+  "solutions": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "De la idea a tu casa lista, sin vueltas",
+    "subtitle": "Un proceso claro y transparente para que sepas exactamente qué va a pasar en cada etapa — desde tu primer mensaje hasta el día que entrás a tu casa contenedor.",
+    "steps": [
+      {
+        "id": "step-1",
+        "number": "01",
+        "icon": "phone",
+        "title": "Nos contás tu proyecto",
+        "description": "Escribinos por WhatsApp o completá el formulario. Nos decís si tenés terreno, qué modelo querés y tu zona. Te respondemos en menos de 24 horas con orientación real."
+      },
+      {
+        "id": "step-2",
+        "number": "02",
+        "icon": "target",
+        "title": "Propuesta y presupuesto",
+        "description": "Analizamos tu terreno, los dormitorios que necesitás y el uso. Te enviamos el presupuesto de tu casa contenedor —detallado, sin letra chica y sin compromiso."
+      },
+      {
+        "id": "step-3",
+        "number": "03",
+        "icon": "wrench",
+        "title": "Fabricamos tu vivienda",
+        "description": "Construimos tu casa contenedor con todos los acabados: aislamiento térmico, instalación eléctrica y sanitaria, cocina, baño y terminaciones a medida."
+      },
+      {
+        "id": "step-4",
+        "number": "04",
+        "icon": "truck",
+        "title": "Entrega e instalación llave en mano",
+        "description": "Coordinamos el traslado y la instalación en tu terreno en Uruguay. Llegamos con grúa, dejamos todo nivelado y listo para que entres a vivir."
+      }
+    ]
+  },
+  "socialProof": {
+    "stats": [
+      {
+        "id": "sp-1",
+        "value": "USD 13.900",
+        "label": "Precio de entrada",
+        "detail": "Modelo Estándar"
+      },
+      {
+        "id": "sp-2",
+        "value": "20 días",
+        "label": "Entrega garantizada",
+        "detail": "hábiles desde tu pedido"
+      },
+      {
+        "id": "sp-3",
+        "value": "3 meses",
+        "label": "Garantía escrita",
+        "detail": "en contrato, sin vueltas"
+      },
+      {
+        "id": "sp-4",
+        "value": "60 cuotas",
+        "label": "Financiación bancaria",
+        "detail": "en unidades indexadas"
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Testimonios",
+    "title": "Lo que dicen quienes ya confiaron",
+    "subtitle": "Clientes reales, proyectos reales. Estas son algunas de las historias de quienes eligieron Monarca Conteiners para tener su casa en Uruguay.",
+    "items": [
+      {
+        "id": "test-1",
+        "name": "Fernanda Rossi",
+        "role": "Propietaria · Canelones",
+        "quote": "Tenía el terreno hace años y no sabía cómo arrancar. Con Monarca fue todo clarísimo: me explicaron las opciones, eligieron el modelo de 2 dormitorios y en 22 días hábiles estaba instalada. No lo podía creer.",
+        "rating": 5
+      },
+      {
+        "id": "test-2",
+        "name": "Sebastián Alves",
+        "role": "Propietario · Maldonado",
+        "quote": "Estaba cansado de pagar alquiler y no llegar nunca a juntar para una casa. La financiación bancaria que ofrecen me cambió todo. Hoy pago una cuota menor a lo que pagaba de alquiler y la casa es mía.",
+        "rating": 5
+      },
+      {
+        "id": "test-3",
+        "name": "Carolina Méndez",
+        "role": "Fundadora · GastroGroup · Montevideo",
+        "quote": "Transformaron un contenedor en nuestro primer local gastronómico. La atención fue impecable desde el día uno y el resultado superó todo lo que imaginamos.",
+        "rating": 5
+      },
+      {
+        "id": "test-4",
+        "name": "Diego Pereyra",
+        "role": "Propietario · Salinas, Canelones",
+        "quote": "Quería una casa container para la costa y no sabía si era posible. Monarca me asesoró en permisos, me hizo el diseño llave en mano y llegaron antes de lo prometido. La casa quedó increíble.",
+        "rating": 5
+      },
+      {
+        "id": "test-5",
+        "name": "Valeria Torres",
+        "role": "Arquitecta · Estudio VT · Montevideo",
+        "quote": "Trabajo con proveedores de contenedores hace años y Monarca es, sin dudas, el más profesional del Uruguay. Entrega en fecha, documentación en regla y atención personalizada en cada proyecto.",
+        "rating": 5
+      },
+      {
+        "id": "test-6",
+        "name": "Lucía Herrera",
+        "role": "Propietaria · Piriápolis",
+        "quote": "Tenía miedo de que fuera fría en invierno o calurosa en verano, pero el aislamiento es excelente. Es cómoda todo el año. La mejor decisión que tomé fue elegir una casa contenedor llave en mano.",
+        "rating": 5
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Lo que más nos preguntan",
+    "subtitle": "Respuestas claras para que tomes la mejor decisión. Si no encontrás lo que buscás, escribinos directamente y te respondemos en menos de 24 horas.",
+    "items": [
+      {
+        "id": "faq-1",
+        "question": "¿Cuánto cuesta una casa contenedor en Uruguay?",
+        "answer": "El precio de entrada de una casa contenedor en Uruguay parte de USD 13.900 para el modelo estándar de 20 pies. Los modelos de 2 dormitorios en 40 pies rondan los USD 22.000 a USD 28.000, según terminaciones y equipamiento. Te enviamos un presupuesto detallado sin compromiso."
+      },
+      {
+        "id": "faq-2",
+        "question": "¿Puedo poner una casa contenedor en mi terreno?",
+        "answer": "Sí. Las casas contenedor se instalan en terreno propio. Los requisitos varían según el departamento (Montevideo, Canelones, Maldonado, etc.), pero en la mayoría de los casos aplican las mismas normativas que para una construcción liviana. Te asesoramos en el proceso de permisos sin costo adicional."
+      },
+      {
+        "id": "faq-3",
+        "question": "¿Qué modelos de casas contenedor tienen disponibles?",
+        "answer": "Trabajamos con tres rangos principales: monoambiente (20 pies), 1 dormitorio (20 pies ampliado), 2 dormitorios (40 pies) y 3 dormitorios (módulos combinados). Todos incluyen cocina, baño completo, instalación eléctrica y aislamiento térmico."
+      },
+      {
+        "id": "faq-4",
+        "question": "¿En cuánto tiempo me entregan la casa lista para vivir?",
+        "answer": "20 días hábiles desde que confirmás el pedido hasta la entrega. Es el plazo garantizado y lo dejamos por escrito en contrato. Sin obras en el lugar —llegamos con la vivienda terminada y la instalamos en tu terreno."
+      },
+      {
+        "id": "faq-5",
+        "question": "¿Ofrecen financiación para la casa contenedor?",
+        "answer": "Sí. Contamos con financiación bancaria de hasta 60 cuotas en unidades indexadas (UI). En muchos casos, la cuota mensual es comparable o menor al alquiler que pagás hoy. Consultanos por las opciones disponibles según tu perfil."
+      },
+      {
+        "id": "faq-6",
+        "question": "¿La casa contenedor es cálida en invierno y fresca en verano?",
+        "answer": "Sí, siempre que tenga el aislamiento correcto — y todas nuestras casas lo incluyen. Trabajamos con aislamiento de lana de roca o espuma de poliuretano proyectado, que logra un desempeño térmico igual o superior al de una construcción tradicional."
+      },
+      {
+        "id": "faq-7",
+        "question": "¿Hacen entrega en todo Uruguay?",
+        "answer": "Sí. Entregamos en todo el territorio nacional: Montevideo, Canelones, Maldonado, Punta del Este, Salinas, Atlántida, Piriápolis, Rocha, Colonia y el interior del país. La logística y la grúa para instalación están incluidas en el presupuesto."
+      },
+      {
+        "id": "faq-8",
+        "question": "¿Qué incluye una casa contenedor llave en mano?",
+        "answer": "La versión llave en mano incluye: estructura del contenedor preparada y pintada, aislamiento térmico y acústico, instalación eléctrica completa, instalación sanitaria con baño terminado, cocina integrada, pisos, ventanas y puertas. La instalamos en tu terreno y te entregamos las llaves."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Primera consulta sin compromiso",
+    "title": "¿Tenés terreno y querés tu casa?",
+    "subtitle": "Contanos en qué departamento está el terreno, cuántos dormitorios necesitás y si querés saber sobre financiación. Te respondemos en menos de 24 horas con una propuesta real, sin letra chica.",
+    "ctaWhatsapp": "Consultá por WhatsApp",
+    "ctaEmail": "Enviar consulta"
+  },
+  "services": {
+    "eyebrow": "Servicios",
+    "title": "Casas contenedor y mucho más",
+    "subtitle": "Desde viviendas llave en mano hasta soluciones comerciales e industriales. Todo con calidad garantizada y entrega en todo Uruguay.",
+    "items": [
+      {
+        "id": "svc-1",
+        "icon": "container",
+        "title": "Casas contenedor llave en mano",
+        "tagline": "Viviendas de 1, 2 y 3 dormitorios",
+        "bullets": [
+          "Modelos de 20 y 40 pies personalizables",
+          "Aislamiento térmico incluido",
+          "Instalación en tu terreno en Uruguay"
+        ]
+      },
+      {
+        "id": "svc-2",
+        "icon": "wrench",
+        "title": "Módulos habitables a medida",
+        "tagline": "Oficinas, locales y espacios especiales",
+        "bullets": [
+          "Diseño y fabricación integral",
+          "Instalaciones eléctricas y sanitarias",
+          "Acabados arquitectónicos premium"
+        ]
+      },
+      {
+        "id": "svc-3",
+        "icon": "clock",
+        "title": "Venta y alquiler de contenedores",
+        "tagline": "Para obras, depósitos y almacenamiento",
+        "bullets": [
+          "Contenedores de 10, 20 y 40 pies",
+          "Certificación de calidad incluida",
+          "Plazos flexibles sin penalidades"
+        ]
+      }
+    ]
+  },
+  "benefits": {
+    "eyebrow": "¿Por qué elegirnos?",
+    "title": "Lo que nos diferencia",
+    "subtitle": "No solo fabricamos casas contenedor. Te acompañamos desde la idea hasta el día que entrás a vivir — con la calidad, la transparencia y la atención que tu proyecto merece.",
+    "items": [
+      {
+        "id": "ben-1",
+        "icon": "shield",
+        "title": "Garantía escrita en contrato",
+        "description": "Cada casa contenedor sale con garantía escrita por 3 meses sobre estructura, estanqueidad y modificaciones. Lo que prometemos, lo firmamos."
+      },
+      {
+        "id": "ben-2",
+        "icon": "zap",
+        "title": "20 días hábiles, garantizados",
+        "description": "Entrega en 20 días hábiles en todo Uruguay — Montevideo, Canelones, Maldonado, costa y el interior. Cumplimos plazos o te avisamos con tiempo."
+      },
+      {
+        "id": "ben-3",
+        "icon": "wrench",
+        "title": "Casa diseñada para vos",
+        "description": "Desde la distribución de ambientes hasta los acabados. Nuestro equipo de ingeniería adapta cada casa contenedor a tu terreno y a tu forma de vivir."
+      },
+      {
+        "id": "ben-4",
+        "icon": "users",
+        "title": "Atención humana, sin bots",
+        "description": "Te atiende un asesor real que conoce el mercado uruguayo y te acompaña en cada etapa — desde la consulta hasta la instalación."
+      },
+      {
+        "id": "ben-5",
+        "icon": "award",
+        "title": "Experiencia en Uruguay",
+        "description": "Proyectos entregados en Montevideo, Canelones, Maldonado, la costa y el interior. Referencias de clientes disponibles."
+      },
+      {
+        "id": "ben-6",
+        "icon": "heart",
+        "title": "Financiación hasta 60 cuotas",
+        "description": "Accedé a tu casa contenedor con financiación bancaria en unidades indexadas. Presupuesto detallado, sin costos ocultos ni sorpresas."
+      }
+    ]
   }
 }

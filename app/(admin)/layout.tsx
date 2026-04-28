@@ -1,21 +1,13 @@
-export default function AdminLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+import { AdminSidebar } from "@/components/features/admin/admin-sidebar";
+import { AdminErrorBoundary } from "@/components/providers/admin-error-boundary";
+import type { ReactNode } from "react";
+
+export default function AdminLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen bg-background-secondary">
-      {/* Admin shell — placeholder */}
-      <aside className="fixed top-0 left-0 bottom-0 w-60 bg-background border-r border-border hidden lg:block">
-        <div className="p-5 border-b border-border">
-          <p className="font-bold text-sm">Panel Admin</p>
-        </div>
-        <nav className="p-4">
-          <p className="text-xs text-foreground-muted">Menú próximamente</p>
-        </nav>
-      </aside>
-      <main className="lg:ml-60 p-6 md:p-10">
-        {children}
+    <div className="min-h-screen flex" style={{ background: "var(--background-secondary)" }}>
+      <AdminSidebar />
+      <main className="flex-1 min-w-0 p-6 lg:p-8" style={{ marginLeft: "14rem" }}>
+        <AdminErrorBoundary>{children}</AdminErrorBoundary>
       </main>
     </div>
   );
