@@ -1,7 +1,9 @@
 import { siteConfig } from "@/config/site";
 import { Icon } from "@/components/ui";
+import content from "@/data/content.json";
 
 export function CtaFinal() {
+  const data = content.cta;
   return (
     <section
       id="contacto"
@@ -21,25 +23,24 @@ export function CtaFinal() {
       <div className="container-narrow relative text-center">
         <span className="badge badge-accent mb-6">
           <Icon name="zap" size={14} />
-          Primera consulta sin compromiso
+          {data.badge}
         </span>
         <h2 id="cta-heading" className="heading-2 mb-4">
-          ¿Listo para tu próximo proyecto?
+          {data.title}
         </h2>
         <p className="text-lg text-dark-fg-secondary max-w-lg mx-auto mb-8 leading-relaxed">
-          Contanos qué necesitás y te enviamos una propuesta a medida en menos de 24 horas.
-          Sin compromiso, sin letra chica.
+          {data.subtitle}
         </p>
 
         {/* CTA buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
           <a href={siteConfig.whatsapp} className="btn btn-whatsapp btn-lg">
             <Icon name="whatsapp" size={20} />
-            Escribinos por WhatsApp
+            {data.ctaWhatsapp}
           </a>
           <a href={`mailto:${siteConfig.email}`} className="btn btn-secondary btn-lg">
             <Icon name="mail" size={18} />
-            Enviar email
+            {data.ctaEmail}
           </a>
         </div>
 

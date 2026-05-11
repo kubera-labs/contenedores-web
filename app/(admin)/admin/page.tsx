@@ -4,7 +4,7 @@ const SECTIONS = [
   {
     href: "/admin/media",
     title: "Galería de medios",
-    desc: "Repositorio central de imágenes compartido por la banda y la galería. Subí, eliminá y controlá el almacenamiento (500 MB).",
+    desc: "Repositorio central de imágenes compartido por la banda. Subí, eliminá y controlá el almacenamiento.",
   },
   {
     href: "/admin/hero",
@@ -12,12 +12,12 @@ const SECTIONS = [
     desc: "Eyebrow, título, subtítulo, botones y microtexto de confianza.",
   },
   {
-    href: "/admin/banda",
+    href: "/admin/image-strip",
     title: "Banda de imágenes",
-    desc: "Strip infinito bajo el hero. Las imágenes vienen de la Galería de medios.",
+    desc: "Strip infinito bajo el hero. Editá la lista de imágenes del carrusel.",
   },
   {
-    href: "/admin/estadisticas",
+    href: "/admin/social-proof",
     title: "Estadísticas",
     desc: "Cifras clave: precio de entrada, plazo, garantía, cuotas.",
   },
@@ -27,14 +27,14 @@ const SECTIONS = [
     desc: "Descripción de la empresa y los pilares de valor.",
   },
   {
-    href: "/admin/galeria",
-    title: "Galería",
-    desc: "Proyectos destacados: asigná imágenes, títulos y descripciones.",
+    href: "/admin/why-modular",
+    title: "Por qué modular",
+    desc: "Argumentos de valor de la construcción modular.",
   },
   {
-    href: "/admin/soluciones",
-    title: "Cómo trabajamos",
-    desc: "Pasos del proceso de trabajo con número, ícono y descripción.",
+    href: "/admin/services",
+    title: "Servicios",
+    desc: "Tipos de soluciones y sus beneficios.",
   },
   {
     href: "/admin/testimonios",
@@ -45,6 +45,11 @@ const SECTIONS = [
     href: "/admin/faq",
     title: "FAQ",
     desc: "Preguntas frecuentes con pregunta y respuesta expandible.",
+  },
+  {
+    href: "/admin/cta",
+    title: "CTA final",
+    desc: "Bloque final con el llamado a la acción y los textos de contacto.",
   },
 ];
 

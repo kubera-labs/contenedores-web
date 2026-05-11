@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Monarca Conteiners",
   },
   description:
-    "Casas contenedor y módulos habitables en Uruguay. Diseñamos viviendas en contenedor llave en mano: 1, 2 y 3 dormitorios. Entrega en 20 días hábiles en todo Uruguay. Financiación disponible.",
+    "Casas contenedor y módulos habitables en Uruguay. Diseñamos viviendas en contenedor llave en mano: 1, 2 y 3 dormitorios. Entrega a partir de 20 días hábiles en todo Uruguay. Financiación disponible.",
   metadataBase: new URL("https://monarcaconteiners.com"),
   keywords: [
     "casas contenedor Uruguay",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     locale: "es_UY",
     url: "https://monarcaconteiners.com",
     title: "Monarca Conteiners — Casas Contenedor y Módulos Habitables en Uruguay",
-    description: "Casas contenedor llave en mano en Uruguay. Viviendas de 1, 2 y 3 dormitorios, entrega en 20 días hábiles y financiación bancaria. Instalamos en tu terreno.",
+    description: "Casas contenedor llave en mano en Uruguay. Viviendas de 1, 2 y 3 dormitorios, entrega a partir de 20 días hábiles y financiación bancaria. Instalamos en tu terreno.",
     siteName: "Monarca Conteiners",
     images: [{
       url: "/og-image.jpg",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Monarca Conteiners — Casas Contenedor en Uruguay",
-    description: "Viviendas en contenedor llave en mano. Modelos de 1, 2 y 3 dormitorios. Entrega en 20 días hábiles en todo Uruguay.",
+    description: "Viviendas en contenedor llave en mano. Modelos de 1, 2 y 3 dormitorios. Entrega a partir de 20 días hábiles en todo Uruguay.",
   },
   robots: {
     index: true,

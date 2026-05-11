@@ -1,9 +1,7 @@
 import { z } from "zod";
 
-/* ── Primitive schemas ── */
 const str = z.string();
 
-/* ── Section schemas ── */
 const HeroSchema = z.object({
   eyebrow: str,
   title: str,
@@ -16,11 +14,12 @@ const HeroSchema = z.object({
   image: str,
 });
 
-const AboutPillarSchema = z.object({
-  id: str,
-  icon: str,
-  title: str,
-  description: str,
+const ImageStripSchema = z.object({
+  items: z.array(z.object({ id: str, src: str })),
+});
+
+const SocialProofSchema = z.object({
+  stats: z.array(z.object({ id: str, value: str, label: str, detail: str })),
 });
 
 const AboutSchema = z.object({
@@ -31,77 +30,41 @@ const AboutSchema = z.object({
   closing: str,
   closingStrong: str,
   ctaLabel: str,
-  pillars: z.array(AboutPillarSchema),
+  image: str,
+  overlayValue: str,
+  overlayLabel: str,
+  stats: z.array(z.object({ id: str, value: str, label: str })),
+  pillars: z.array(z.object({ id: str, icon: str, title: str, description: str })),
 });
 
-const GalleryItemSchema = z.object({
-  id: str,
-  label: str,
-  description: str,
-  tag: str,
-  image: str.optional(),
-});
-
-const GallerySchema = z.object({
+const WhyModularSchema = z.object({
   eyebrow: str,
   title: str,
   titleAccent: str,
   subtitle: str,
-  items: z.array(GalleryItemSchema),
+  items: z.array(z.object({ id: str, icon: str, title: str, description: str })),
 });
 
-const SolutionStepSchema = z.object({
-  id: str,
-  number: str,
-  icon: str,
-  title: str,
-  description: str,
-});
-
-const SolutionsSchema = z.object({
+const ServicesSchema = z.object({
   eyebrow: str,
   title: str,
+  titleAccent: str,
   subtitle: str,
-  steps: z.array(SolutionStepSchema),
-});
-
-const SocialProofStatSchema = z.object({
-  id: str,
-  value: str,
-  label: str,
-  detail: str,
-});
-
-const SocialProofSchema = z.object({
-  stats: z.array(SocialProofStatSchema),
-});
-
-const TestimonialItemSchema = z.object({
-  id: str,
-  name: str,
-  role: str,
-  quote: str,
-  rating: z.number().int().min(1).max(5),
+  items: z.array(z.object({ id: str, icon: str, title: str, tagline: str, bullets: z.array(str) })),
 });
 
 const TestimonialsSchema = z.object({
   eyebrow: str,
   title: str,
   subtitle: str,
-  items: z.array(TestimonialItemSchema),
-});
-
-const FaqItemSchema = z.object({
-  id: str,
-  question: str,
-  answer: str,
+  items: z.array(z.object({ id: str, name: str, role: str, quote: str, rating: z.number().int().min(1).max(5) })),
 });
 
 const FaqSchema = z.object({
   eyebrow: str,
   title: str,
   subtitle: str,
-  items: z.array(FaqItemSchema),
+  items: z.array(z.object({ id: str, question: str, answer: str })),
 });
 
 const CtaSchema = z.object({
@@ -112,47 +75,24 @@ const CtaSchema = z.object({
   ctaEmail: str,
 });
 
-const ServiceItemSchema = z.object({
-  id: str,
-  icon: str,
-  title: str,
-  tagline: str,
-  bullets: z.array(str),
-});
-
-const ServicesSchema = z.object({
+const GallerySchema = z.object({
   eyebrow: str,
   title: str,
-  subtitle: str,
-  items: z.array(ServiceItemSchema),
+  titleAccent: str,
+  images: z.array(z.object({ id: str, src: str, alt: str })),
 });
 
-const BenefitItemSchema = z.object({
-  id: str,
-  icon: str,
-  title: str,
-  description: str,
-});
-
-const BenefitsSchema = z.object({
-  eyebrow: str,
-  title: str,
-  subtitle: str,
-  items: z.array(BenefitItemSchema),
-});
-
-/* ── Root schema ── */
 export const SiteContentSchema = z.object({
   hero: HeroSchema,
+  imageStrip: ImageStripSchema,
+  socialProof: SocialProofSchema,
   about: AboutSchema,
   gallery: GallerySchema,
-  solutions: SolutionsSchema,
-  socialProof: SocialProofSchema,
+  whyModular: WhyModularSchema,
+  services: ServicesSchema,
   testimonials: TestimonialsSchema,
   faq: FaqSchema,
   cta: CtaSchema,
-  services: ServicesSchema,
-  benefits: BenefitsSchema,
 });
 
 export type ValidatedSiteContent = z.infer<typeof SiteContentSchema>;

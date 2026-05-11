@@ -2,8 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Icon } from "@/components/ui";
+import content from "@/data/content.json";
 
 export function Hero() {
+  const data = content.hero;
   return (
     <section
       id="hero"
@@ -25,18 +27,18 @@ export function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(8,18,32,0.82) 0%, rgba(8,18,32,0.55) 40%, rgba(8,18,32,0.78) 100%)",
+            "linear-gradient(to bottom, rgba(10,22,40,0.85) 0%, rgba(10,22,40,0.50) 35%, rgba(10,22,40,0.92) 75%, #0A1628 100%)",
         }}
         aria-hidden="true"
       />
 
       {/* ─── Content ─── */}
       <div
-        className="container-base relative z-10 flex-1 flex flex-col items-center justify-center text-center pt-16 md:pt-18 pb-12"
+        className="container-base relative z-10 flex-1 flex flex-col items-center justify-center text-center pt-12 sm:pt-16 md:pt-18 pb-12"
       >
-        {/* Eyebrow pill */}
+        {/* Eyebrow pill — desktop only */}
         <div
-          className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 text-xs font-semibold tracking-wider uppercase"
+          className="hidden sm:inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 text-xs font-semibold tracking-wider uppercase"
           style={{
             background: "rgba(251,191,36,0.12)",
             border: "1px solid rgba(251,191,36,0.30)",
@@ -47,7 +49,7 @@ export function Hero() {
             className="w-1.5 h-1.5 rounded-full bg-accent-400 inline-block animate-pulse"
             aria-hidden="true"
           />
-          Stock disponible · Entrega en 20 días hábiles
+          {data.eyebrow}
         </div>
 
         {/* Headline */}
@@ -55,52 +57,64 @@ export function Hero() {
           className="heading-1 max-w-4xl"
           style={{ color: "#ffffff" }}
         >
-          Contenedores Marítimos y Modulares <br className="hidden sm:block" />
-          <span className="text-gradient">listos y entregados sin vueltas.</span>
+          {/* Mobile: título compacto */}
+          <span className="sm:hidden" style={{ fontSize: "var(--text-4xl)" }}>
+            Contenedores modulares,{" "}<span className="text-gradient">diseñados a medida.</span>
+          </span>
+          {/* Desktop: título completo */}
+          <span className="hidden sm:inline">
+            {data.title} <br />
+            <span className="text-gradient">{data.titleAccent}</span>
+          </span>
         </h1>
 
-        {/* Subtitle */}
+        {/* Subtitle — mobile: datos clave en una línea / desktop: párrafo completo */}
         <p
-          className="text-lg md:text-xl leading-relaxed max-w-2xl mt-6"
-          style={{ color: "rgba(255,255,255,0.88)", textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
+          className="mt-3 sm:mt-6 leading-relaxed"
+          style={{ color: "rgba(255,255,255,0.80)", textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
         >
-          No más presupuestos que se disparan ni plazos que no se cumplen.
-          Stock propio, modificaciones a medida y logística en todo el país —{" "}
-          <strong style={{ color: "#ffffff", fontWeight: 700 }}>
-            con garantía escrita en contrato.
-          </strong>
+          <span
+            className="sm:hidden"
+            style={{ fontSize: "var(--text-sm)" }}
+          >
+            Entrega desde 20 días hábiles · Financiación disponible · Todo el país
+          </span>
+          <span className="hidden sm:inline text-lg md:text-xl max-w-2xl">
+            {data.subtitle}{" "}
+            <strong style={{ color: "#ffffff", fontWeight: 700 }}>{data.subtitleStrong}</strong>
+          </span>
         </p>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-3 mt-8 w-full sm:w-auto">
+        {/* CTAs — desktop only */}
+        <div className="hidden sm:flex flex-row gap-3 mt-8 w-auto">
           <a
             href={siteConfig.whatsapp}
-            className="btn btn-whatsapp btn-lg w-full sm:w-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
+            className="btn btn-whatsapp btn-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
             aria-label="Solicitar cotización gratuita por WhatsApp de manera segura y sin compromiso"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Icon name="whatsapp" size={20} aria-hidden="true" />
-            <span>Quiero mi cotización gratis</span>
+            <span>{data.ctaPrimary}</span>
           </a>
           <Link
             href="/#soluciones"
-            className="btn btn-secondary btn-lg w-full sm:w-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="btn btn-secondary btn-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             style={{ borderColor: "rgba(255,255,255,0.35)", color: "#ffffff" }}
             aria-label="Ir a la sección de soluciones modulares y descubrir cómo trabajamos los contenedores marítimos"
           >
-            <span>Ver cómo trabajamos</span>
+            <span>{data.ctaSecondary}</span>
             <Icon name="arrow-right" size={18} aria-hidden="true" />
           </Link>
         </div>
 
-        {/* Micro-trust */}
+        {/* Micro-trust — desktop only */}
         <p
-          className="flex items-center gap-2 mt-6"
+          className="hidden sm:flex items-center gap-2 mt-6"
           style={{ fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.62)" }}
         >
           <Icon name="clock" size={13} />
-          Sin compromiso · Respondemos en menos de 24 hs · Garantía escrita
+          {data.microtrust}
         </p>
       </div>
     </section>

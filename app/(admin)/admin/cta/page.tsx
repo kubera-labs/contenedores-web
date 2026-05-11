@@ -6,15 +6,15 @@ export default async function CtaPage() {
   return (
     <SectionEditor
       section="cta"
-      title="CTA Final"
-      description="Llamada a la acción al final de la página."
+      title="CTA final"
+      description="Bloque final con el llamado a la acción."
       initialData={data as unknown as Record<string, unknown>}
       fields={[
-        { key: "badge", label: "Badge (pastilla sobre el título)" },
+        { key: "badge", label: "Badge" },
         { key: "title", label: "Título", span: "full" },
         { key: "subtitle", label: "Subtítulo", multiline: true, span: "full" },
-        { key: "ctaWhatsapp", label: "Texto del botón WhatsApp" },
-        { key: "ctaEmail", label: "Texto del botón Email" },
+        { key: "ctaWhatsapp", label: "Texto WhatsApp" },
+        { key: "ctaEmail", label: "Texto email" },
       ]}
     />
   );

@@ -7,32 +7,43 @@ export default async function AboutPage() {
     <SectionEditor
       section="about"
       title="Nosotros"
-      description="Sección que presenta la misión de la empresa y sus pilares de valor."
+      description="Texto de presentación, pilares y estadísticas."
       initialData={data as unknown as Record<string, unknown>}
       fields={[
         { key: "eyebrow", label: "Eyebrow" },
         { key: "title", label: "Título" },
-        { key: "titleAccent", label: "Título — parte dorada" },
-        { key: "subtitle", label: "Subtítulo principal", multiline: true, span: "full" },
-        { key: "closing", label: "Frase de cierre", multiline: true, span: "full" },
-        { key: "closingStrong", label: "Cierre — parte destacada en negrita" },
-        { key: "ctaLabel", label: "Texto del botón CTA" },
+        { key: "titleAccent", label: "Título destacado" },
+        { key: "subtitle", label: "Subtítulo", multiline: true, span: "full" },
+        { key: "closing", label: "Cierre", multiline: true, span: "full" },
+        { key: "closingStrong", label: "Cierre destacado" },
+        { key: "ctaLabel", label: "CTA" },
+        { key: "image", label: "Ruta de imagen", span: "full" },
+        { key: "overlayValue", label: "Valor overlay" },
+        { key: "overlayLabel", label: "Etiqueta overlay" },
       ]}
-      list={{
-        listKey: "pillars",
-        label: "Pilares de valor",
-        itemLabel: "Pilar",
-        fields: [
-          {
-            key: "icon",
-            label: "Ícono",
-            hint: "target, zap, sparkles, shield, clock, truck, wrench, heart, award…",
-          },
-          { key: "title", label: "Título del pilar" },
-          { key: "description", label: "Descripción", multiline: true, span: "full" },
-        ],
-        defaultItem: { icon: "target", title: "", description: "" },
-      }}
+      lists={[
+        {
+          listKey: "stats",
+          label: "Estadísticas",
+          itemLabel: "Estadística",
+          fields: [
+            { key: "value", label: "Valor" },
+            { key: "label", label: "Etiqueta" },
+          ],
+          defaultItem: { value: "", label: "" },
+        },
+        {
+          listKey: "pillars",
+          label: "Pilares",
+          itemLabel: "Pilar",
+          fields: [
+            { key: "icon", label: "Ícono" },
+            { key: "title", label: "Título" },
+            { key: "description", label: "Descripción", multiline: true, span: "full" },
+          ],
+          defaultItem: { icon: "", title: "", description: "" },
+        },
+      ]}
     />
   );
 }

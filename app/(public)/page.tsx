@@ -3,41 +3,46 @@ import { Hero } from "@/components/features/hero";
 import { ImageStrip } from "@/components/features/image-strip";
 import { SocialProof } from "@/components/features/social-proof";
 import { About } from "@/components/features/about";
-import { Gallery } from "@/components/features/gallery";
-import { Solutions } from "@/components/features/solutions";
+import { WhyModular } from "@/components/features/why-modular";
+import { Services } from "@/components/features/services";
 import { Testimonials } from "@/components/features/testimonials";
+import { Gallery } from "@/components/features/gallery";
 import { Faq } from "@/components/features/faq";
-import { getStripImages } from "@/lib/get-strip-images";
+import { CtaFinal } from "@/components/features/cta-final";
+import { getSection } from "@/lib/db";
 
 export const metadata: Metadata = {
-  title: "Casas Contenedor Uruguay | Módulos Habitables | Monarca Conteiners",
+  title: "Viviendas y Espacios Modulares | Monarca Conteiners",
   description:
-    "Casas contenedor y módulos habitables en Uruguay. Diseños de 1, 2 y 3 dormitorios, llave en mano, con instalación en tu terreno. Entrega en 20 días hábiles. Financiación bancaria hasta 60 cuotas.",
+    "Diseñamos viviendas, monoambientes, oficinas y espacios modulares a medida. Asesoramiento completo, cobertura en todo el país y financiación disponible.",
   alternates: {
     canonical: "https://monarcaconteiners.com",
   },
   openGraph: {
-    title: "Casas Contenedor Uruguay | Módulos Habitables | Monarca Conteiners",
+    title: "Viviendas y Espacios Modulares | Monarca Conteiners",
     description:
-      "Casas contenedor llave en mano en Uruguay. Viviendas de 1, 2 y 3 dormitorios, entrega en 20 días hábiles en Montevideo, Canelones, Maldonado y todo el país.",
+      "Diseñamos viviendas, monoambientes, oficinas y espacios modulares a medida. Asesoramiento completo, cobertura en todo el país y financiación disponible.",
     url: "https://monarcaconteiners.com",
   },
 };
 
 export default async function HomePage() {
-  const stripImages = await getStripImages();
+  const imageStrip = await getSection("imageStrip");
 
   return (
     <>
       <Hero />
-      <ImageStrip images={stripImages} />
+      <ImageStrip images={imageStrip.items.map((item) => item.src)} />
       <SocialProof />
       <About />
+      <WhyModular />
+      <Services />
       <Gallery />
-      <Solutions />
       <Testimonials />
       <Faq />
+      <CtaFinal />
     </>
   );
 }
+
 

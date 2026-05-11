@@ -7,7 +7,7 @@ jest.mock("@/lib/db", () => ({
 }));
 
 jest.mock("next/cache", () => ({
-  revalidatePath: jest.fn(),
+  revalidateTag: jest.fn(),
 }));
 
 import { getSection, setSection } from "@/lib/db";
@@ -64,10 +64,10 @@ describe("GET /api/content/[section]", () => {
     expect(res.status).toBe(500);
   });
 
-  test("returns valid data for gallery section", async () => {
-    const req = new NextRequest("http://localhost/api/content/gallery");
-    await GET(req, makeCtx("gallery"));
-    expect(mockGetSection).toHaveBeenCalledWith("gallery");
+  test("returns valid data for image strip section", async () => {
+    const req = new NextRequest("http://localhost/api/content/imageStrip");
+    await GET(req, makeCtx("imageStrip"));
+    expect(mockGetSection).toHaveBeenCalledWith("imageStrip");
   });
 
   test("returns valid data for faq section", async () => {

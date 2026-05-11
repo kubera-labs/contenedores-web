@@ -1,6 +1,3 @@
-// Types for the JSON content database (data/content.json)
-// Each section matches a top-level key in the JSON file.
-
 export interface HeroContent {
   eyebrow: string;
   title: string;
@@ -13,53 +10,13 @@ export interface HeroContent {
   image: string;
 }
 
-export interface AboutPillar {
+export interface ImageStripItem {
   id: string;
-  icon: string;
-  title: string;
-  description: string;
+  src: string;
 }
 
-export interface AboutContent {
-  eyebrow: string;
-  title: string;
-  titleAccent: string;
-  subtitle: string;
-  closing: string;
-  closingStrong: string;
-  ctaLabel: string;
-  pillars: AboutPillar[];
-}
-
-export interface GalleryItem {
-  id: string;
-  label: string;
-  description: string;
-  tag: string;
-  image?: string;
-}
-
-export interface GalleryContent {
-  eyebrow: string;
-  title: string;
-  titleAccent: string;
-  subtitle: string;
-  items: GalleryItem[];
-}
-
-export interface SolutionStep {
-  id: string;
-  number: string;
-  icon: string;
-  title: string;
-  description: string;
-}
-
-export interface SolutionsContent {
-  eyebrow: string;
-  title: string;
-  subtitle: string;
-  steps: SolutionStep[];
+export interface ImageStripContent {
+  items: ImageStripItem[];
 }
 
 export interface SocialProofStat {
@@ -71,6 +28,65 @@ export interface SocialProofStat {
 
 export interface SocialProofContent {
   stats: SocialProofStat[];
+}
+
+export interface AboutPillar {
+  id: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface AboutStat {
+  id: string;
+  value: string;
+  label: string;
+}
+
+export interface AboutContent {
+  eyebrow: string;
+  title: string;
+  titleAccent: string;
+  subtitle: string;
+  closing: string;
+  closingStrong: string;
+  ctaLabel: string;
+  image: string;
+  overlayValue: string;
+  overlayLabel: string;
+  stats: AboutStat[];
+  pillars: AboutPillar[];
+}
+
+export interface WhyModularItem {
+  id: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface WhyModularContent {
+  eyebrow: string;
+  title: string;
+  titleAccent: string;
+  subtitle: string;
+  items: WhyModularItem[];
+}
+
+export interface ServiceItem {
+  id: string;
+  icon: string;
+  title: string;
+  tagline: string;
+  bullets: string[];
+}
+
+export interface ServicesContent {
+  eyebrow: string;
+  title: string;
+  titleAccent: string;
+  subtitle: string;
+  items: ServiceItem[];
 }
 
 export interface TestimonialItem {
@@ -109,50 +125,31 @@ export interface CtaContent {
   ctaEmail: string;
 }
 
-export interface ServiceItem {
+export interface GalleryImage {
   id: string;
-  icon: string;
-  title: string;
-  tagline: string;
-  bullets: string[];
+  src: string;
+  alt: string;
 }
 
-export interface ServicesContent {
+export interface GalleryContent {
   eyebrow: string;
   title: string;
-  subtitle: string;
-  items: ServiceItem[];
-}
-
-export interface BenefitItem {
-  id: string;
-  icon: string;
-  title: string;
-  description: string;
-}
-
-export interface BenefitsContent {
-  eyebrow: string;
-  title: string;
-  subtitle: string;
-  items: BenefitItem[];
+  titleAccent: string;
+  images: GalleryImage[];
 }
 
 export interface SiteContent {
   hero: HeroContent;
+  imageStrip: ImageStripContent;
+  socialProof: SocialProofContent;
   about: AboutContent;
   gallery: GalleryContent;
-  solutions: SolutionsContent;
-  socialProof: SocialProofContent;
+  whyModular: WhyModularContent;
+  services: ServicesContent;
   testimonials: TestimonialsContent;
   faq: FaqContent;
   cta: CtaContent;
-  services: ServicesContent;
-  benefits: BenefitsContent;
 }
 
-/** Union of all section keys in the content DB */
 export type ContentSection = keyof SiteContent;
-
-/** Resolves the type for a given section key */
 export type ContentOf<K extends ContentSection> = SiteContent[K];

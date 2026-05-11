@@ -7,7 +7,7 @@ export default async function FaqPage() {
     <SectionEditor
       section="faq"
       title="FAQ"
-      description="Preguntas frecuentes. Podés reordenarlas con ▲▼ para cambiar el orden en que aparecen."
+      description="Preguntas frecuentes que aparecen al final de la home."
       initialData={data as unknown as Record<string, unknown>}
       fields={[
         { key: "eyebrow", label: "Eyebrow" },

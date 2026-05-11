@@ -1,11 +1,7 @@
-const stats = [
-  { value: "USD 13.900", label: "Precio de entrada", detail: "Modelo Estándar" },
-  { value: "20 días", label: "Entrega garantizada", detail: "hábiles desde tu pedido" },
-  { value: "3 meses", label: "Garantía escrita", detail: "en contrato, sin vueltas" },
-  { value: "60 cuotas", label: "Financiación bancaria", detail: "en unidades indexadas" },
-];
+import content from "@/data/content.json";
 
 export function SocialProof() {
+  const stats = content.socialProof.stats;
   return (
     <section className="section-dark relative" aria-label="Indicadores de confianza">
 

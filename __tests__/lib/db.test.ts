@@ -5,6 +5,10 @@ jest.mock("node:fs/promises", () => ({
   writeFile: jest.fn(),
 }));
 
+jest.mock("next/cache", () => ({
+  unstable_cache: (fn: unknown) => fn,
+}));
+
 import { readFile, writeFile } from "node:fs/promises";
 import { getContent, getSection, setSection, updateSection } from "@/lib/db";
 import type { SiteContent } from "@/types/content";
@@ -21,6 +25,8 @@ const mockContent: SiteContent = {
     microtrust: "Trust",
     image: "/img.jpg",
   },
+  imageStrip: { items: [] },
+  socialProof: { stats: [] },
   about: {
     eyebrow: "About",
     title: "About us",
@@ -29,22 +35,15 @@ const mockContent: SiteContent = {
     closing: "Close",
     closingStrong: "Strong",
     ctaLabel: "CTA",
+    image: "/img.jpg",
+    overlayValue: "5+",
+    overlayLabel: "Years",
+    stats: [],
     pillars: [],
   },
-  gallery: {
-    eyebrow: "Gallery",
-    title: "Gallery title",
-    titleAccent: "title",
-    subtitle: "sub",
-    items: [],
-  },
-  solutions: {
-    eyebrow: "Solutions",
-    title: "Solutions title",
-    subtitle: "sub",
-    steps: [],
-  },
-  socialProof: { stats: [] },
+  gallery: { eyebrow: "Gallery", title: "Gallery", titleAccent: "g", images: [] },
+  whyModular: { eyebrow: "Why", title: "Why", titleAccent: "w", subtitle: "sub", items: [] },
+  services: { eyebrow: "Services", title: "Services", titleAccent: "s", subtitle: "sub", items: [] },
   testimonials: {
     eyebrow: "Testimonials",
     title: "What clients say",
@@ -59,8 +58,6 @@ const mockContent: SiteContent = {
     ctaWhatsapp: "wa",
     ctaEmail: "email",
   },
-  services: { eyebrow: "Services", title: "Services", subtitle: "sub", items: [] },
-  benefits: { eyebrow: "Benefits", title: "Benefits", subtitle: "sub", items: [] },
 };
 
 const mockReadFile = readFile as jest.Mock;
@@ -87,9 +84,9 @@ describe("getSection", () => {
     expect(hero.eyebrow).toBe("Eyebrow");
   });
 
-  test("returns the gallery section", async () => {
-    const gallery = await getSection("gallery");
-    expect(gallery.items).toEqual([]);
+  test("returns the image strip section", async () => {
+    const strip = await getSection("imageStrip");
+    expect(strip.items).toEqual([]);
   });
 
   test("returns the faq section", async () => {
@@ -114,7 +111,7 @@ describe("setSection", () => {
 
     const written = JSON.parse(mockWriteFile.mock.calls[0][1] as string) as SiteContent;
     expect(written.faq.eyebrow).toBe("FAQ");
-    expect(written.gallery.eyebrow).toBe("Gallery");
+    expect(written.imageStrip.items).toEqual([]);
   });
 });
 

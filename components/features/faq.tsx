@@ -14,17 +14,30 @@ export function Faq() {
   };
 
   return (
-    <section id="faq" className="section" aria-labelledby="faq-heading">
+    <section
+      id="faq"
+      className="section section-dark"
+      aria-labelledby="faq-heading"
+    >
       <div className="container-narrow">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="mb-12 md:mb-16">
           <span className="eyebrow" style={{ color: "var(--color-accent-400)" }}>
             {data.eyebrow}
           </span>
-          <h2 id="faq-heading" className="heading-2 mt-3 mb-4">
+          <h2
+            id="faq-heading"
+            className="heading-2 mt-3 mb-2"
+            style={{ color: "var(--dark-fg)" }}
+          >
             {data.title}
           </h2>
-          <p className="section-subtitle mx-auto">{data.subtitle}</p>
+          {/* Gold underline accent */}
+          <div
+            className="w-10 h-0.5 mt-4"
+            style={{ background: "var(--color-accent-400)" }}
+            aria-hidden="true"
+          />
         </div>
 
         {/* Accordion */}
@@ -36,7 +49,8 @@ export function Faq() {
                 key={item.id}
                 className="rounded-xl overflow-hidden transition-colors"
                 style={{
-                  border: `1px solid ${isOpen ? "rgba(251,191,36,0.35)" : "var(--border)"}`,
+                  border: `1px solid ${isOpen ? "rgba(251,191,36,0.35)" : "var(--dark-border)"}`,
+                  background: "rgba(15,32,53,0.55)",
                 }}
               >
                 <button
@@ -47,14 +61,21 @@ export function Faq() {
                   aria-controls={`faq-panel-${item.id}`}
                   id={`faq-button-${item.id}`}
                 >
-                  <span style={{ color: isOpen ? "var(--color-accent-400)" : undefined }}>
+                  <span
+                    style={{
+                      color: isOpen ? "var(--color-accent-400)" : "var(--dark-fg)",
+                    }}
+                  >
                     {item.question}
                   </span>
                   <Icon
                     name="chevron-down"
                     size={18}
                     className={`shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                    style={{ color: isOpen ? "var(--color-accent-400)" : "var(--foreground-muted)", flexShrink: 0 }}
+                    style={{
+                      color: isOpen ? "var(--color-accent-400)" : "var(--dark-fg-muted)",
+                      flexShrink: 0,
+                    }}
                   />
                 </button>
                 <div
@@ -63,7 +84,10 @@ export function Faq() {
                   aria-labelledby={`faq-button-${item.id}`}
                   className={`overflow-hidden transition-all ${isOpen ? "max-h-96" : "max-h-0"}`}
                 >
-                  <p className="px-5 pb-4 text-sm leading-relaxed" style={{ color: "var(--foreground-secondary)" }}>
+                  <p
+                    className="px-5 pb-4 text-sm leading-relaxed"
+                    style={{ color: "var(--dark-fg-secondary)" }}
+                  >
                     {item.answer}
                   </p>
                 </div>
@@ -75,4 +99,3 @@ export function Faq() {
     </section>
   );
 }
-

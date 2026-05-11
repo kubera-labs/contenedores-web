@@ -5,15 +5,14 @@ import type { ContentSection } from "@/types/content";
 
 const VALID_SECTIONS: ContentSection[] = [
   "hero",
-  "about",
-  "gallery",
-  "solutions",
+  "imageStrip",
   "socialProof",
+  "about",
+  "whyModular",
+  "services",
   "testimonials",
   "faq",
   "cta",
-  "services",
-  "benefits",
 ];
 
 type Ctx = { params: Promise<{ section: string }> };

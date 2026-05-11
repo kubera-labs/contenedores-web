@@ -8,13 +8,14 @@ const NAV = [
   { href: "/admin", label: "Dashboard", exact: true },
   { href: "/admin/media", label: "Galería de medios" },
   { href: "/admin/hero", label: "Hero" },
-  { href: "/admin/banda", label: "Banda de imágenes" },
-  { href: "/admin/estadisticas", label: "Estadísticas" },
+  { href: "/admin/image-strip", label: "Banda de imágenes" },
+  { href: "/admin/social-proof", label: "Estadísticas" },
   { href: "/admin/about", label: "Nosotros" },
-  { href: "/admin/galeria", label: "Galería" },
-  { href: "/admin/soluciones", label: "Cómo trabajamos" },
+  { href: "/admin/why-modular", label: "Por qué modular" },
+  { href: "/admin/services", label: "Servicios" },
   { href: "/admin/testimonios", label: "Testimonios" },
   { href: "/admin/faq", label: "FAQ" },
+  { href: "/admin/cta", label: "CTA final" },
 ];
 
 export function AdminSidebar() {

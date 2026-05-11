@@ -1,10 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
-
-// ----------------------------------------------------------------
-// Types
-// ----------------------------------------------------------------
+import { useCallback, useState } from "react";
 
 export type FieldType = "text" | "number" | "bullets";
 
@@ -33,13 +29,10 @@ type Props = {
   initialData: Record<string, any>;
   fields?: FieldDef[];
   list?: ListDef;
+  lists?: ListDef[];
 };
 
 type SaveStatus = "idle" | "saving" | "saved" | "error";
-
-// ----------------------------------------------------------------
-// Field
-// ----------------------------------------------------------------
 
 function Field({
   def,
@@ -52,20 +45,13 @@ function Field({
 }) {
   const isBullets = def.type === "bullets";
   const isMultiline = def.multiline || isBullets;
-
   const displayValue =
-    isBullets && Array.isArray(value)
-      ? (value as string[]).join("\n")
-      : String(value ?? "");
+    isBullets && Array.isArray(value) ? (value as string[]).join("\n") : String(value ?? "");
 
   function handleChange(str: string) {
-    if (isBullets) {
-      onChange(str.split("\n"));
-    } else if (def.type === "number") {
-      onChange(str === "" ? "" : Number(str));
-    } else {
-      onChange(str);
-    }
+    if (isBullets) onChange(str.split("\n"));
+    else if (def.type === "number") onChange(str === "" ? "" : Number(str));
+    else onChange(str);
   }
 
   const inputStyle: React.CSSProperties = {
@@ -78,15 +64,9 @@ function Field({
 
   return (
     <div className="flex flex-col gap-1">
-      <label
-        htmlFor={def.key}
-        className="text-xs font-semibold uppercase tracking-wide"
-        style={{ color: "var(--foreground-secondary)" }}
-      >
+      <label htmlFor={def.key} className="text-xs font-semibold uppercase tracking-wide" style={{ color: "var(--foreground-secondary)" }}>
         {def.label}
-        {isBullets && (
-          <span className="ml-1 font-normal normal-case opacity-60">(una por línea)</span>
-        )}
+        {isBullets && <span className="ml-1 font-normal normal-case opacity-60">(una por línea)</span>}
       </label>
       {isMultiline ? (
         <textarea
@@ -107,18 +87,10 @@ function Field({
           style={inputStyle}
         />
       )}
-      {def.hint && (
-        <p className="text-xs" style={{ color: "var(--foreground-muted)" }}>
-          {def.hint}
-        </p>
-      )}
+      {def.hint && <p className="text-xs" style={{ color: "var(--foreground-muted)" }}>{def.hint}</p>}
     </div>
   );
 }
-
-// ----------------------------------------------------------------
-// ItemCard
-// ----------------------------------------------------------------
 
 function ItemCard({
   item,
@@ -137,81 +109,35 @@ function ItemCard({
   onMove: (dir: -1 | 1) => void;
   onDelete: () => void;
 }) {
-  const ctrlBtn =
-    "px-2 py-1 text-xs rounded font-medium transition-colors disabled:opacity-25 disabled:cursor-not-allowed";
-
+  const ctrlBtn = "px-2 py-1 text-xs rounded font-medium transition-colors disabled:opacity-25 disabled:cursor-not-allowed";
   return (
-    <div
-      className="rounded-lg border p-4"
-      style={{ borderColor: "var(--border)", background: "var(--background-secondary)" }}
-    >
-      {/* Header row */}
+    <div className="rounded-lg border p-4" style={{ borderColor: "var(--border)", background: "var(--background-secondary)" }}>
       <div className="flex items-center justify-between mb-3">
-        <span
-          className="text-xs font-bold px-2 py-0.5 rounded"
-          style={{ background: "var(--background-tertiary)", color: "var(--foreground-muted)" }}
-        >
+        <span className="text-xs font-bold px-2 py-0.5 rounded" style={{ background: "var(--background-tertiary)", color: "var(--foreground-muted)" }}>
           #{index + 1}
         </span>
         <div className="flex items-center gap-1">
-          <button
-            type="button"
-            onClick={() => onMove(-1)}
-            disabled={index === 0}
-            className={ctrlBtn}
-            style={{ background: "var(--background-tertiary)", color: "var(--foreground-secondary)" }}
-            title="Mover arriba"
-          >
+          <button type="button" onClick={() => onMove(-1)} disabled={index === 0} className={ctrlBtn} style={{ background: "var(--background-tertiary)", color: "var(--foreground-secondary)" }}>
             ▲
           </button>
-          <button
-            type="button"
-            onClick={() => onMove(1)}
-            disabled={index === total - 1}
-            className={ctrlBtn}
-            style={{ background: "var(--background-tertiary)", color: "var(--foreground-secondary)" }}
-            title="Mover abajo"
-          >
+          <button type="button" onClick={() => onMove(1)} disabled={index === total - 1} className={ctrlBtn} style={{ background: "var(--background-tertiary)", color: "var(--foreground-secondary)" }}>
             ▼
           </button>
-          <button
-            type="button"
-            onClick={onDelete}
-            className={ctrlBtn}
-            style={{ background: "#FEE2E2", color: "#DC2626" }}
-            title="Eliminar"
-          >
+          <button type="button" onClick={onDelete} className={ctrlBtn} style={{ background: "#FEE2E2", color: "#DC2626" }}>
             Eliminar
           </button>
         </div>
       </div>
-
-      {/* Fields */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {fields.map((f) => (
-          <div
-            key={f.key}
-            className={
-              f.span === "full" || f.multiline || f.type === "bullets"
-                ? "md:col-span-2"
-                : ""
-            }
-          >
-            <Field
-              def={{ ...f, key: `item-${index}-${f.key}` }}
-              value={item[f.key]}
-              onChange={(val) => onChangeField(f.key, val)}
-            />
+          <div key={f.key} className={f.span === "full" || f.multiline || f.type === "bullets" ? "md:col-span-2" : ""}>
+            <Field def={{ ...f, key: `item-${index}-${f.key}` }} value={item[f.key]} onChange={(val) => onChangeField(f.key, val)} />
           </div>
         ))}
       </div>
     </div>
   );
 }
-
-// ----------------------------------------------------------------
-// Save button
-// ----------------------------------------------------------------
 
 function SaveButton({
   label,
@@ -225,65 +151,48 @@ function SaveButton({
   onClick: () => void;
 }) {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      disabled={disabled}
-      className="shrink-0 px-5 py-2 rounded-lg text-sm font-semibold text-white transition-all disabled:opacity-60 whitespace-nowrap"
-      style={{ background: bg }}
-    >
+    <button type="button" onClick={onClick} disabled={disabled} className="shrink-0 px-5 py-2 rounded-lg text-sm font-semibold text-white transition-all disabled:opacity-60 whitespace-nowrap" style={{ background: bg }}>
       {label}
     </button>
   );
 }
 
-// ----------------------------------------------------------------
-// SectionEditor (main export)
-// ----------------------------------------------------------------
-
-export function SectionEditor({ section, title, description, initialData, fields, list }: Props) {
+export function SectionEditor({ section, title, description, initialData, fields, list, lists }: Props) {
   const [data, setData] = useState<Record<string, unknown>>(initialData);
   const [status, setStatus] = useState<SaveStatus>("idle");
+  const allLists = lists ?? (list ? [list] : []);
 
   const setScalarField = useCallback((key: string, value: unknown) => {
     setData((prev) => ({ ...prev, [key]: value }));
     setStatus("idle");
   }, []);
 
-  const getItems = useCallback(
-    () => (list ? ((data[list.listKey] as Record<string, unknown>[]) ?? []) : []),
-    [data, list],
-  );
+  const getItems = useCallback((listDef: ListDef) => (data[listDef.listKey] as Record<string, unknown>[]) ?? [], [data]);
 
-  const setItems = useCallback(
-    (items: Record<string, unknown>[]) => {
-      if (!list) return;
-      setData((prev) => ({ ...prev, [list.listKey]: items }));
-      setStatus("idle");
-    },
-    [list],
-  );
-
-  const updateItem = (index: number, key: string, val: unknown) => {
-    const items = [...getItems()];
-    items[index] = { ...items[index], [key]: val };
-    setItems(items);
+  const writeItems = (listDef: ListDef, items: Record<string, unknown>[]) => {
+    setData((prev) => ({ ...prev, [listDef.listKey]: items }));
+    setStatus("idle");
   };
 
-  const moveItem = (index: number, dir: -1 | 1) => {
-    const items = [...getItems()];
+  const updateItem = (listDef: ListDef, index: number, key: string, val: unknown) => {
+    const items = [...getItems(listDef)];
+    items[index] = { ...items[index], [key]: val };
+    writeItems(listDef, items);
+  };
+
+  const moveItem = (listDef: ListDef, index: number, dir: -1 | 1) => {
+    const items = [...getItems(listDef)];
     const target = index + dir;
     if (target < 0 || target >= items.length) return;
     [items[index], items[target]] = [items[target], items[index]];
-    setItems(items);
+    writeItems(listDef, items);
   };
 
-  const deleteItem = (index: number) => setItems(getItems().filter((_, i) => i !== index));
+  const deleteItem = (listDef: ListDef, index: number) => writeItems(listDef, getItems(listDef).filter((_, i) => i !== index));
 
-  const addItem = () => {
-    if (!list) return;
+  const addItem = (listDef: ListDef) => {
     const newId = `${section}-${Date.now().toString(36)}`;
-    setItems([...getItems(), { id: newId, ...list.defaultItem }]);
+    writeItems(listDef, [...getItems(listDef), { id: newId, ...listDef.defaultItem }]);
   };
 
   const save = async () => {
@@ -302,48 +211,23 @@ export function SectionEditor({ section, title, description, initialData, fields
     }
   };
 
-  const items = getItems();
-
-  const saveLabel =
-    status === "saving"
-      ? "Guardando…"
-      : status === "saved"
-        ? "✓ Guardado"
-        : status === "error"
-          ? "✗ Error — reintentar"
-          : "Guardar cambios";
-
-  const saveBg =
-    status === "saved" ? "#16A34A" : status === "error" ? "#DC2626" : "#2563EB";
+  const saveLabel = status === "saving" ? "Guardando…" : status === "saved" ? "✓ Guardado" : status === "error" ? "✕ Error — reintentar" : "Guardar cambios";
+  const saveBg = status === "saved" ? "#16A34A" : status === "error" ? "#DC2626" : "#2563EB";
 
   return (
     <div className="max-w-4xl">
-      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>
-            {title}
-          </h1>
-          {description && (
-            <p className="mt-1 text-sm" style={{ color: "var(--foreground-secondary)" }}>
-              {description}
-            </p>
-          )}
+          <h1 className="text-2xl font-bold" style={{ color: "var(--foreground)" }}>{title}</h1>
+          {description && <p className="mt-1 text-sm" style={{ color: "var(--foreground-secondary)" }}>{description}</p>}
         </div>
         <SaveButton label={saveLabel} bg={saveBg} disabled={status === "saving"} onClick={save} />
       </div>
 
-      {/* Scalar fields */}
       {fields && fields.length > 0 && (
-        <div
-          className="rounded-xl border p-6 mb-6"
-          style={{ borderColor: "var(--border)", background: "var(--background)" }}
-        >
-          <p
-            className="text-xs font-semibold uppercase tracking-wide mb-5"
-            style={{ color: "var(--foreground-secondary)" }}
-          >
-            Textos y configuración
+        <div className="rounded-xl border p-6 mb-6" style={{ borderColor: "var(--border)", background: "var(--background)" }}>
+          <p className="text-xs font-semibold uppercase tracking-wide mb-5" style={{ color: "var(--foreground-secondary)" }}>
+            Textos y configuracion
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {fields.map((f) => (
@@ -355,62 +239,46 @@ export function SectionEditor({ section, title, description, initialData, fields
         </div>
       )}
 
-      {/* List */}
-      {list && (
-        <div
-          className="rounded-xl border p-6"
-          style={{ borderColor: "var(--border)", background: "var(--background)" }}
-        >
-          <div className="flex items-center justify-between mb-5">
-            <p
-              className="text-xs font-semibold uppercase tracking-wide"
-              style={{ color: "var(--foreground-secondary)" }}
-            >
-              {list.label}{" "}
-              <span
-                className="ml-1 px-1.5 py-0.5 rounded text-xs font-normal"
-                style={{ background: "var(--background-tertiary)", color: "var(--foreground-muted)" }}
-              >
-                {items.length}
-              </span>
-            </p>
-            <button
-              type="button"
-              onClick={addItem}
-              className="px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors"
-              style={{ background: "#DBEAFE", color: "#1D4ED8" }}
-            >
-              + Agregar {list.itemLabel}
-            </button>
+      {allLists.map((listDef) => {
+        const items = getItems(listDef);
+        return (
+          <div key={listDef.listKey} className="rounded-xl border p-6 mb-6" style={{ borderColor: "var(--border)", background: "var(--background)" }}>
+            <div className="flex items-center justify-between mb-5">
+              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: "var(--foreground-secondary)" }}>
+                {listDef.label}{" "}
+                <span className="ml-1 px-1.5 py-0.5 rounded text-xs font-normal" style={{ background: "var(--background-tertiary)", color: "var(--foreground-muted)" }}>
+                  {items.length}
+                </span>
+              </p>
+              <button type="button" onClick={() => addItem(listDef)} className="px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors" style={{ background: "#DBEAFE", color: "#1D4ED8" }}>
+                + Agregar {listDef.itemLabel}
+              </button>
+            </div>
+
+            {items.length === 0 ? (
+              <div className="text-center py-10 text-sm rounded-lg border-2 border-dashed" style={{ borderColor: "var(--border)", color: "var(--foreground-muted)" }}>
+                No hay {listDef.label.toLowerCase()} todavía. Hacé clic en "+" para agregar.
+              </div>
+            ) : (
+              <div className="space-y-3">
+                {items.map((item, index) => (
+                  <ItemCard
+                    key={String(item.id ?? index)}
+                    item={item}
+                    index={index}
+                    total={items.length}
+                    fields={listDef.fields}
+                    onChangeField={(key, val) => updateItem(listDef, index, key, val)}
+                    onMove={(dir) => moveItem(listDef, index, dir)}
+                    onDelete={() => deleteItem(listDef, index)}
+                  />
+                ))}
+              </div>
+            )}
           </div>
+        );
+      })}
 
-          {items.length === 0 ? (
-            <div
-              className="text-center py-10 text-sm rounded-lg border-2 border-dashed"
-              style={{ borderColor: "var(--border)", color: "var(--foreground-muted)" }}
-            >
-              No hay {list.label.toLowerCase()} todavía. Hacé clic en &quot;+&quot; para agregar.
-            </div>
-          ) : (
-            <div className="space-y-3">
-              {items.map((item, index) => (
-                <ItemCard
-                  key={String(item.id ?? index)}
-                  item={item}
-                  index={index}
-                  total={items.length}
-                  fields={list.fields}
-                  onChangeField={(key, val) => updateItem(index, key, val)}
-                  onMove={(dir) => moveItem(index, dir)}
-                  onDelete={() => deleteItem(index)}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Bottom save */}
       <div className="mt-6 flex justify-end">
         <SaveButton label={saveLabel} bg={saveBg} disabled={status === "saving"} onClick={save} />
       </div>

@@ -22,7 +22,10 @@ export function ImageStrip({ images }: ImageStripProps) {
   useEffect(() => {
     const strip = stripRef.current;
     const outer = outerRef.current;
-    if (!strip || !outer || images.length === 0) return;
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!strip || !outer || images.length === 0 || prefersReducedMotion) return;
 
     // Wait for images to be in DOM, then measure one "set" width
     const setup = () => {
