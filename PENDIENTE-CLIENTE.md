@@ -27,9 +27,9 @@ Se necesita **1 foto por proyecto** en la sección "Nuestros proyectos". Formato
 |--------------------|-----------------------------------------|------------|
 | Teléfono           | `+54 11 1234-5678`                      | __________ |
 | WhatsApp (link)    | `https://wa.me/541112345678`            | __________ |
-| Email              | `info@monarcaconteiners.com`            | __________ |
+| Email              | `info@monarcascontainer.com`            | __________ |
 | Dirección          | `Av. Industrial 1234, Buenos Aires`     | __________ |
-| URL del sitio      | `https://monarcaconteiners.com`         | __________ |
+| URL del sitio      | `https://monarcascontainer.com`         | __________ |
 
 > El número de WhatsApp se usa en el botón principal del navbar y en el CTA final.
 
@@ -39,9 +39,9 @@ Se necesita **1 foto por proyecto** en la sección "Nuestros proyectos". Formato
 
 | Red        | URL actual (placeholder)                          | URL real |
 |------------|---------------------------------------------------|----------|
-| Instagram  | `https://instagram.com/monarcaconteiners`         | ________ |
-| Facebook   | `https://facebook.com/monarcaconteiners`          | ________ |
-| LinkedIn   | `https://linkedin.com/company/monarcaconteiners`  | ________ |
+| Instagram  | `https://instagram.com/monarcascontainer`         | ________ |
+| Facebook   | `https://facebook.com/monarcascontainer`          | ________ |
+| LinkedIn   | `https://linkedin.com/company/monarcascontainer`  | ________ |
 
 > Si alguna red no existe todavía, avisá para quitarla del footer y no mostrar links rotos.
 

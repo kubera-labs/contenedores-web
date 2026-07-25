@@ -1,30 +1,42 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import LightGallery from "lightgallery/react";
-import lgZoom from "lightgallery/plugins/zoom";
-import lgThumbnail from "lightgallery/plugins/thumbnail";
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
-import "lightgallery/css/lg-thumbnail.css";
+import { Icon } from "@/components/ui";
 import content from "@/data/content.json";
-import type { LightGallery as LGInstance } from "lightgallery/lightgallery";
 
 const { gallery: data } = content;
 
-const dynamicEl = data.images.map((img) => ({
-  src: img.src,
-  thumb: img.src,
-  alt: img.alt,
-}));
-
 export function Gallery() {
-  const lgRef = useRef<LGInstance | null>(null);
-
-  const open = (index: number) => lgRef.current?.openGallery(index);
-
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [hero, img1, img2, img3, img4] = data.images;
+  const isOpen = currentIndex !== null;
+  const displayedIndex = currentIndex ?? 0;
+  const activeImage = isOpen ? data.images[displayedIndex] : null;
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!isOpen || !dialog || dialog.open) return;
+
+    dialog.showModal();
+    return () => {
+      if (dialog.open) dialog.close();
+    };
+  }, [isOpen]);
+
+  const open = (index: number) => setCurrentIndex(index);
+  const close = () => dialogRef.current?.close();
+  const previous = () => {
+    setCurrentIndex((index) =>
+      index === null ? 0 : (index - 1 + data.images.length) % data.images.length,
+    );
+  };
+  const next = () => {
+    setCurrentIndex((index) =>
+      index === null ? 0 : (index + 1) % data.images.length,
+    );
+  };
 
   return (
     <section
@@ -32,20 +44,6 @@ export function Gallery() {
       className="section section-dark"
       aria-labelledby="gallery-heading"
     >
-      {/* LightGallery — dynamic mode, hidden trigger */}
-      <LightGallery
-        onInit={(ref) => { lgRef.current = ref.instance; }}
-        plugins={[lgZoom, lgThumbnail]}
-        dynamic
-        dynamicEl={dynamicEl}
-        licenseKey="0000-0000-000-0000"
-        speed={400}
-        download={false}
-      >
-        {/* lightgallery requires at least one child in dynamic mode */}
-        <span className="sr-only">galería</span>
-      </LightGallery>
-
       <div className="container-base">
         {/* ── Header ── */}
         <div className="flex items-end justify-between gap-6 mb-8">
@@ -151,6 +149,95 @@ export function Gallery() {
           ))}
         </div>
       </div>
+
+      {activeImage && (
+        <dialog
+          ref={dialogRef}
+          className="m-0 h-svh w-screen max-w-none border-0 p-0"
+          style={{ background: "var(--dark-bg)", color: "var(--dark-fg)" }}
+          aria-labelledby="gallery-dialog-title"
+          onClose={() => setCurrentIndex(null)}
+          onKeyDown={(event) => {
+            if (event.key === "ArrowLeft") {
+              event.preventDefault();
+              previous();
+            }
+            if (event.key === "ArrowRight") {
+              event.preventDefault();
+              next();
+            }
+          }}
+        >
+          <h2 id="gallery-dialog-title" className="sr-only">
+            Visor de galería
+          </h2>
+
+          <div className="relative h-full w-full">
+            <Image
+              src={activeImage.src}
+              alt={activeImage.alt}
+              fill
+              className="object-contain p-4 sm:p-8 md:p-12"
+              sizes="100vw"
+              priority
+            />
+
+            <button
+              type="button"
+              onClick={close}
+              className="absolute right-4 top-4 rounded-full p-3 transition-colors"
+              style={{
+                background: "var(--dark-bg-secondary)",
+                color: "var(--dark-fg)",
+                zIndex: "var(--z-modal)",
+              }}
+              aria-label="Cerrar galería"
+            >
+              <Icon name="x" size={24} />
+            </button>
+
+            <button
+              type="button"
+              onClick={previous}
+              className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-3 transition-transform hover:scale-110"
+              style={{
+                background: "var(--dark-bg-secondary)",
+                color: "var(--dark-fg)",
+                zIndex: "var(--z-modal)",
+              }}
+              aria-label="Imagen anterior"
+            >
+              <Icon name="arrow-left" size={24} />
+            </button>
+
+            <button
+              type="button"
+              onClick={next}
+              className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-3 transition-transform hover:scale-110"
+              style={{
+                background: "var(--dark-bg-secondary)",
+                color: "var(--dark-fg)",
+                zIndex: "var(--z-modal)",
+              }}
+              aria-label="Imagen siguiente"
+            >
+              <Icon name="arrow-right" size={24} />
+            </button>
+
+            <p
+              className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full px-4 py-2 text-sm"
+              style={{
+                background: "var(--dark-bg-secondary)",
+                color: "var(--dark-fg-secondary)",
+                zIndex: "var(--z-modal)",
+              }}
+              aria-live="polite"
+            >
+              {displayedIndex + 1} de {data.images.length}
+            </p>
+          </div>
+        </dialog>
+      )}
     </section>
   );
 }

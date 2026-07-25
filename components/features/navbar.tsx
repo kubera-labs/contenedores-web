@@ -65,7 +65,7 @@ export function Navbar() {
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-1">
           {siteConfig.navLinks.map((link) => (
-            <li key={link.href}>
+            <li key={`${link.label}-${link.href}`}>
               <a
                 href={link.href}
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
@@ -113,7 +113,7 @@ export function Navbar() {
         <div className="md:hidden border-t border-border bg-background">
           <ul className="container-base py-4 flex flex-col gap-1">
             {siteConfig.navLinks.map((link) => (
-              <li key={link.href}>
+              <li key={`${link.label}-${link.href}`}>
                 <a
                   href={link.href}
                   className="block px-3 py-2.5 text-sm font-medium text-foreground-secondary rounded-md hover:text-foreground hover:bg-background-tertiary transition-colors"

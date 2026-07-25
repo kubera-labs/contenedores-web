@@ -18,12 +18,12 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Monarca Conteiners — Casas Contenedor y Módulos Habitables en Uruguay",
-    template: "%s | Monarca Conteiners",
+    default: "Monarca container — Casas Contenedor y Módulos Habitables en Uruguay",
+    template: "%s | Monarca container",
   },
   description:
     "Casas contenedor y módulos habitables en Uruguay. Diseñamos viviendas en contenedor llave en mano: 1, 2 y 3 dormitorios. Entrega a partir de 20 días hábiles en todo Uruguay. Financiación disponible.",
-  metadataBase: new URL("https://monarcaconteiners.com"),
+  metadataBase: new URL("https://monarcascontainer.com"),
   keywords: [
     "casas contenedor Uruguay",
     "casa contenedor Uruguay",
@@ -41,20 +41,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_UY",
-    url: "https://monarcaconteiners.com",
-    title: "Monarca Conteiners — Casas Contenedor y Módulos Habitables en Uruguay",
+    url: "https://monarcascontainer.com",
+    title: "Monarca container — Casas Contenedor y Módulos Habitables en Uruguay",
     description: "Casas contenedor llave en mano en Uruguay. Viviendas de 1, 2 y 3 dormitorios, entrega a partir de 20 días hábiles y financiación bancaria. Instalamos en tu terreno.",
-    siteName: "Monarca Conteiners",
+    siteName: "Monarca container",
     images: [{
       url: "/og-image.jpg",
       width: 1200,
       height: 630,
-      alt: "Monarca Conteiners — Casas contenedor Uruguay llave en mano",
+      alt: "Monarca container — Casas contenedor Uruguay llave en mano",
     }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Monarca Conteiners — Casas Contenedor en Uruguay",
+    title: "Monarca container — Casas Contenedor en Uruguay",
     description: "Viviendas en contenedor llave en mano. Modelos de 1, 2 y 3 dormitorios. Entrega a partir de 20 días hábiles en todo Uruguay.",
   },
   robots: {
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     }
   },
   alternates: {
-    canonical: "https://monarcaconteiners.com",
+    canonical: "https://monarcascontainer.com",
   },
   formatDetection: {
     telephone: false,

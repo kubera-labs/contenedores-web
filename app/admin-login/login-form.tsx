@@ -58,7 +58,7 @@ export function LoginForm() {
           <div className="flex justify-center mb-7">
             <Image
               src="/logo_final_optimizado.webp"
-              alt="Monarca Conteiners"
+              alt="Monarca container"
               width={140}
               height={42}
               className="object-contain"

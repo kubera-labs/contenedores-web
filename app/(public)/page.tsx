@@ -12,17 +12,17 @@ import { CtaFinal } from "@/components/features/cta-final";
 import { getSection } from "@/lib/db";
 
 export const metadata: Metadata = {
-  title: "Viviendas y Espacios Modulares | Monarca Conteiners",
+  title: "Viviendas y Espacios Modulares | Monarca container",
   description:
     "Diseñamos viviendas, monoambientes, oficinas y espacios modulares a medida. Asesoramiento completo, cobertura en todo el país y financiación disponible.",
   alternates: {
-    canonical: "https://monarcaconteiners.com",
+    canonical: "https://monarcascontainer.com",
   },
   openGraph: {
-    title: "Viviendas y Espacios Modulares | Monarca Conteiners",
+    title: "Viviendas y Espacios Modulares | Monarca container",
     description:
       "Diseñamos viviendas, monoambientes, oficinas y espacios modulares a medida. Asesoramiento completo, cobertura en todo el país y financiación disponible.",
-    url: "https://monarcaconteiners.com",
+    url: "https://monarcascontainer.com",
   },
 };
 

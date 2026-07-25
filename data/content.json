@@ -29,7 +29,7 @@
     ]
   },
   "about": {
-    "eyebrow": "Sobre Monarca Conteiners",
+    "eyebrow": "Sobre Monarca container",
     "title": "Tu casa propia,",
     "titleAccent": "De la industria al diseño de autor.",
     "subtitle": "Nuestra historia comienza en los puertos uruguayos, donde descubrimos el potencial inexplorado de los contenedores marítimos: su fuerza estructural, su modularidad y su honestidad material.",
@@ -158,7 +158,7 @@
   "testimonials": {
     "eyebrow": "Testimonios",
     "title": "Lo que dicen quienes ya confiaron",
-    "subtitle": "Clientes reales, proyectos reales. Estas son algunas de las experiencias de quienes eligieron Monarca Conteiners para crear su espacio.",
+    "subtitle": "Clientes reales, proyectos reales. Estas son algunas de las experiencias de quienes eligieron Monarca container para crear su espacio.",
     "items": [
       {
         "id": "test-1",
@@ -298,7 +298,7 @@
     "title": "Obras que",
     "titleAccent": "hablan por sí solas.",
     "images": [
-      { "id": "g-1",  "src": "/contenedores/c1.jpeg",  "alt": "Proyecto modular Monarca Conteiners" },
+      { "id": "g-1",  "src": "/contenedores/c1.jpeg",  "alt": "Proyecto modular Monarca container" },
       { "id": "g-2",  "src": "/contenedores/c2.jpeg",  "alt": "Interior espacioso vivienda contenedor" },
       { "id": "g-3",  "src": "/contenedores/c3.jpeg",  "alt": "Escalera y doble altura" },
       { "id": "g-4",  "src": "/contenedores/c4.jpeg",  "alt": "Fachada modular con jardín" },

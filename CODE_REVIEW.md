@@ -1,4 +1,4 @@
-# Code Review — Contenedores Web (Monarca Conteiners)
+# Code Review — Contenedores Web (Monarca container)
 
 > Generado al cierre de la sesión de implementación. Todas las observaciones incluyen archivo, línea aproximada, severidad y recomendación concreta.
 
@@ -228,9 +228,9 @@ Los archivos `app/sitemap.ts` y `app/robots.ts` no existen. Sin ellos, Google no
 // app/sitemap.ts
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    { url: "https://monarcaconteiners.com", lastModified: new Date() },
-    { url: "https://monarcaconteiners.com/privacidad", ... },
-    { url: "https://monarcaconteiners.com/terminos", ... },
+    { url: "https://monarcascontainer.com", lastModified: new Date() },
+    { url: "https://monarcascontainer.com/privacidad", ... },
+    { url: "https://monarcascontainer.com/terminos", ... },
   ];
 }
 ```

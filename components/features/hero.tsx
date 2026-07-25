@@ -98,7 +98,7 @@ export function Hero() {
             <span>{data.ctaPrimary}</span>
           </a>
           <Link
-            href="/#soluciones"
+            href="/#servicios"
             className="btn btn-secondary btn-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             style={{ borderColor: "rgba(255,255,255,0.35)", color: "#ffffff" }}
             aria-label="Ir a la sección de soluciones modulares y descubrir cómo trabajamos los contenedores marítimos"

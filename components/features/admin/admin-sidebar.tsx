@@ -41,7 +41,7 @@ export function AdminSidebar() {
       <div className="px-5 py-4 flex items-center gap-3" style={{ borderBottom: "1px solid var(--border)" }}>
         <Image
           src="/logo_final_optimizado.webp"
-          alt="Monarca Conteiners"
+          alt="Monarca container"
           width={120}
           height={36}
           className="object-contain"
