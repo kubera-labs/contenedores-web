@@ -56,7 +56,7 @@ export function CtaFinal() {
           </span>
           <span className="flex items-center gap-2">
             <Icon name="map-pin" size={16} />
-            Buenos Aires, Argentina
+            Canelones, Uruguay
           </span>
         </div>
       </div>
